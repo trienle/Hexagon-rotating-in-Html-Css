@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eec85d;
+}
+.line{
+  width: 400px;
+  height: 10px;
+  position: relative;
+  background-color: white;
+  animation: rotating 3s linear infinite;
+
+}
+.hexagon{
+  position: absolute;
+  height: 24px;
+  width: 40px;
+  top: -34px;
+  background-color: rgb(255, 255, 255);
+  animation: moving 3s linear infinite;
+}
+.hexagon::before{
+  content: "";
+   position: absolute;
+  height: 24px;
+  width: 40px;
+ 
+  background-color: rgb(255, 255, 255);
+  transform: rotate(60deg);
+
+}
+.hexagon::after{
+  content: "";
+   position: absolute;
+  height: 24px;
+  width: 40px;
+ 
+  background-color: rgb(255, 255, 255);
+  transform: rotate(-60deg);
+
+}
+@keyframes moving{
+  0%{
+    left: 0;
+    transform: rotate();
+  }
+  50%{
+    left: 375px;
+    transform: rotate(760deg);
+  }
+  100%{
+    left: 0;
+    transform: rotate(0);
+  }
+}
+@keyframes rotating{
+  0%{
+    transform: rotate(20deg);
+  }
+  25%{
+    transform: rotate(0deg);
+  }
+  50%{
+    transform: rotate(-20deg);
+  }
+ 75%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(20deg);
+  }
+}
